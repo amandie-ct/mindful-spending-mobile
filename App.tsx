@@ -1,24 +1,27 @@
 import { StyleSheet } from 'react-native';
+import { ThemeProvider } from '@shopify/restyle';
 import {
   SafeAreaProvider,
   SafeAreaView,
 } from 'react-native-safe-area-context';
 
 import { Text } from './src/components/Text/Text';
+import { Theme } from './src/theme/theme';
 
 function App() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.screen} edges={['top', 'right', 'bottom', 'left']}>
+        <ThemeProvider theme={theme}>
         <Text
           preset="headingLarge"
-          style={styles.title}
+          title
         >
           Mindful spending
         </Text>
         <Text
           preset="headingSmall"
-          style={styles.body}
+          
         >
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni ex
           asperiores, exercitationem amet fugiat explicabo ut vitae blanditiis
@@ -28,6 +31,7 @@ function App() {
           exercitationem sunt at numquam necessitatibus soluta? Ut, quis? Odit
           quis minus praesentium architecto adipisci numquam veniam.
         </Text>
+        </ThemeProvider>
       </SafeAreaView>
     </SafeAreaProvider>
   );
