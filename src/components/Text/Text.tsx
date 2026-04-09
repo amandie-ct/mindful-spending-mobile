@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  Text as RNText,
-  TextProps as RNTextProps,
-  TextStyle,
-} from 'react-native';
+import {TextStyle} from 'react-native';
+import {createText} from '@shopify/restyle';
+import {Theme} from '../../theme/theme';
 
 type TextVariants =
   | 'headingLarge'
@@ -15,13 +13,17 @@ type TextVariants =
   | 'paragraphCaption'
   | 'paragraphCaptionSmall';
 
-interface TextProps extends RNTextProps {
+type SRTextProps = React.ComponentProps<typeof SRText>;
+
+interface TextProps extends SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;
   semibold?: boolean;
   title?: boolean;
 }
+
+const SRText = createText<Theme>();
 
 const $fontSizes: Record<TextVariants, TextStyle> = {
   headingLarge: { fontSize: 32, lineHeight: 38.4 },
@@ -99,12 +101,12 @@ export function Text({
   semibold,
   title,
   preset = 'paragraphMedium',
-  ...rest
+  ...sRTextProps
 }: TextProps) {
   const fontFamily = getFontFamily(preset, bold, italic, semibold, title);
   return (
-    <RNText {...rest} style={[$fontSizes[preset], { fontFamily }, style]}>
+    <SRText {...sRTextProps} style={[$fontSizes[preset], { fontFamily }, style]}>
       {children}
-    </RNText>
+    </SRText>
   );
 }
