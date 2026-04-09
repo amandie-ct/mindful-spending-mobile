@@ -28,7 +28,6 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
@@ -36,6 +35,8 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>RCTNewArchEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,7 +54,29 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AbrilFatface-Regular.otf</string>
+		<string>Raleway-Black-Italic-Original.otf</string>
+		<string>Raleway-Black-Original.otf</string>
+		<string>Raleway-Bold-Italic-Original.otf</string>
+		<string>Raleway-Bold-Original.otf</string>
+		<string>Raleway-ExtraBold-Italic-Original.otf</string>
+		<string>Raleway-ExtraBold-Original.otf</string>
+		<string>Raleway-ExtraLight-Italic-Original.otf</string>
+		<string>Raleway-ExtraLight-Original.otf</string>
+		<string>Raleway-Light-Italic-Original.otf</string>
+		<string>Raleway-Light-Original.otf</string>
+		<string>Raleway-Medium-Italic-Original.otf</string>
+		<string>Raleway-Medium-Original.otf</string>
+		<string>Raleway-Regular-Italic-Original.otf</string>
+		<string>Raleway-Regular-Original.otf</string>
+		<string>Raleway-SemiBold-Italic-Original.otf</string>
+		<string>Raleway-SemiBold-Original.otf</string>
+		<string>Raleway-Thin-Italic-Original.otf</string>
+		<string>Raleway-Thin-Original.otf</string>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
