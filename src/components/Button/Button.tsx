@@ -3,7 +3,7 @@ import { TouchableOpacityBox, TouchableOpacityBoxProps } from "../Box/Box";
 import { Text } from "../Text/Text";
 import { buttonPresets } from "./buttonPresets";
 
-export type ButtonPreset = 'primary' | 'outline';
+export type ButtonPreset = 'primary' | 'outline' | 'secondary';
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
@@ -24,16 +24,16 @@ export function Button({
     <TouchableOpacityBox
       disabled={disabled || loading}
       paddingHorizontal="s20"
-      height={50}
+      height={60}
       alignItems="center"
       justifyContent="center"
-      borderRadius="s16"
+      borderRadius="s24"
       {...buttonPreset.container}
       {...touchableOpacityBoxProps}>
       {loading ? (
         <ActivityIndicator color={buttonPreset.content} />
       ) : (
-        <Text preset="paragraphMedium" bold color={buttonPreset.content}>
+        <Text preset="headingSmall" bold color={buttonPreset.content}>
           {title}
         </Text>
       )}

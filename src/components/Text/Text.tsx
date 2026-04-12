@@ -1,7 +1,7 @@
 import React from 'react';
-import {TextStyle} from 'react-native';
-import {createText} from '@shopify/restyle';
-import {Theme} from '../../theme/theme';
+import { Platform, TextStyle } from 'react-native';
+import { createText } from '@shopify/restyle';
+import { Theme } from '../../theme/theme';
 
 type TextVariants =
   | 'headingLarge'
@@ -38,26 +38,44 @@ const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphCaptionSmall: { fontSize: 10, lineHeight: 14 },
 };
 
+const fontName = (ios: string, defaultName: string) =>
+  Platform.select({
+    ios,
+    default: defaultName,
+  }) ?? defaultName;
+
 export const $fontFamily = {
-  abrilTitle: 'AbrilFatface-Regular',
-  black: 'Raleway-Black-Original',
-  blackItalic: 'Raleway-Black-Italic-Original',
-  bold: 'Raleway-Bold-Original',
-  boldItalic: 'Raleway-Bold-Italic-Original',
-  extraBold: 'Raleway-ExtraBold-Original',
-  extraBoldItalic: 'Raleway-ExtraBold-Italic-Original',
-  extraLight: 'Raleway-ExtraLight-Original',
-  extraLightItalic: 'Raleway-ExtraLight-Italic-Original',
-  light: 'Raleway-Light-Original',
-  lightItalic: 'Raleway-Light-Italic-Original',
-  medium: 'Raleway-Medium-Original',
-  mediumItalic: 'Raleway-Medium-Italic-Original',
-  regular: 'Raleway-Regular-Original',
-  regularItalic: 'Raleway-Regular-Italic-Original',
-  semiBold: 'Raleway-SemiBold-Original',
-  semiBoldItalic: 'Raleway-SemiBold-Italic-Original',
-  thin: 'Raleway-Thin-Original',
-  thinItalic: 'Raleway-Thin-Italic-Original',
+  abrilTitle: fontName('AbrilFatface-Regular', 'AbrilFatface-Regular'),
+  black: fontName('Raleway-Black', 'Raleway-Black-Original'),
+  blackItalic: fontName('Raleway-BlackItalic', 'Raleway-Black-Italic-Original'),
+  bold: fontName('Raleway-Bold', 'Raleway-Bold-Original'),
+  boldItalic: fontName('Raleway-BoldItalic', 'Raleway-Bold-Italic-Original'),
+  extraBold: fontName('Raleway-ExtraBold', 'Raleway-ExtraBold-Original'),
+  extraBoldItalic: fontName(
+    'Raleway-ExtraBoldItalic',
+    'Raleway-ExtraBold-Italic-Original',
+  ),
+  extraLight: fontName('Raleway-ExtraLight', 'Raleway-ExtraLight-Original'),
+  extraLightItalic: fontName(
+    'Raleway-ExtraLightItalic',
+    'Raleway-ExtraLight-Italic-Original',
+  ),
+  light: fontName('Raleway-Light', 'Raleway-Light-Original'),
+  lightItalic: fontName('Raleway-LightItalic', 'Raleway-Light-Italic-Original'),
+  medium: fontName('Raleway-Medium', 'Raleway-Medium-Original'),
+  mediumItalic: fontName(
+    'Raleway-MediumItalic',
+    'Raleway-Medium-Italic-Original',
+  ),
+  regular: fontName('Raleway-Regular', 'Raleway-Regular-Original'),
+  regularItalic: fontName('Raleway-Italic', 'Raleway-Regular-Italic-Original'),
+  semiBold: fontName('Raleway-SemiBold', 'Raleway-SemiBold-Original'),
+  semiBoldItalic: fontName(
+    'Raleway-SemiBoldItalic',
+    'Raleway-SemiBold-Italic-Original',
+  ),
+  thin: fontName('Raleway-Thin', 'Raleway-Thin-Original'),
+  thinItalic: fontName('Raleway-ThinItalic', 'Raleway-Thin-Italic-Original'),
 };
 
 function getFontFamily(
@@ -83,7 +101,7 @@ function getFontFamily(
     case bold && italic:
       return $fontFamily.boldItalic;
     case bold:
-      return $fontFamily.bold;
+      return $fontFamily.extraBold;
     case semibold && italic:
       return $fontFamily.semiBoldItalic;
     case semibold:
@@ -105,7 +123,10 @@ export function Text({
 }: TextProps) {
   const fontFamily = getFontFamily(preset, bold, italic, semibold, title);
   return (
-    <SRText {...sRTextProps} style={[$fontSizes[preset], { fontFamily }, style]}>
+    <SRText
+      {...sRTextProps}
+      style={[$fontSizes[preset], { fontFamily }, style]}
+    >
       {children}
     </SRText>
   );

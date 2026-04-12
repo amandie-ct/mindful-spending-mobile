@@ -17,9 +17,23 @@ export const buttonPresets: Record<
   primary: {
     default: {
       container: {
-        backgroundColor: 'primary',
+        backgroundColor: 'lightSecondary',
       },
-      content: 'lilacPrimary',
+      content: 'grayWhite',
+    },
+    disabled: {
+      container: {
+        backgroundColor: 'gray4',
+      },
+      content: 'gray2',
+    },
+  },
+    secondary: {
+    default: {
+      container: {
+        backgroundColor: 'darkSecondary',
+      },
+      content: 'grayWhite',
     },
     disabled: {
       container: {
@@ -32,9 +46,9 @@ export const buttonPresets: Record<
     default: {
       container: {
         borderWidth: 1,
-        borderColor: 'primary',
+        borderColor: 'lightSecondary',
       },
-      content: 'primary',
+      content: 'lightSecondary',
     },
     disabled: {
       container: {

@@ -1,8 +1,10 @@
 import { createTheme } from "@shopify/restyle";
 
 const palette = {
-    lilacPrimary: '#f1e3fc',
-    greenSecondary: '#ccd5ae',
+    lightPrimary: '#F8F7FB',
+    darkPrimary: '#0f1117',
+    lightSecondary: '#907994',
+    darkSecondary: '#9a517f',
     greenSuccess: '#4ABC86',
     redError: '#EA3838',
     grayBlack: '#000000',
@@ -17,8 +19,8 @@ const palette = {
 export const theme = createTheme({
     colors: {
         ...palette,
-        primary: palette.lilacPrimary,
-        buttonPrimary: palette.grayBlack,
+        primary: palette.lightPrimary,
+        buttonPrimary: palette.lightSecondary ,
         error: palette.redError,
         success: palette.greenSuccess,
     },
@@ -40,6 +42,8 @@ export const theme = createTheme({
     s8: 8,
     s12: 12,
     s16: 16,
+        s20: 20,
+                s24: 24,
   },
   textVariants: {
     defaults: {},
