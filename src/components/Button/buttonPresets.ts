@@ -42,6 +42,22 @@ export const buttonPresets: Record<
       content: 'gray2',
     },
   },
+    outlineSecondary: {
+    default: {
+      container: {
+        borderWidth: 1,
+        borderColor: 'darkSecondary',
+      },
+      content: 'darkSecondary',
+    },
+    disabled: {
+      container: {
+        borderWidth: 1,
+        borderColor: 'gray4',
+      },
+      content: 'gray2',
+    },
+  },
   outline: {
     default: {
       container: {

@@ -1,9 +1,9 @@
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator } from "../ActivityIndicator/ActivityIndicator";
 import { TouchableOpacityBox, TouchableOpacityBoxProps } from "../Box/Box";
 import { Text } from "../Text/Text";
 import { buttonPresets } from "./buttonPresets";
 
-export type ButtonPreset = 'primary' | 'outline' | 'secondary';
+export type ButtonPreset = 'primary' | 'outline' | 'secondary' | 'outlineSecondary';
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
