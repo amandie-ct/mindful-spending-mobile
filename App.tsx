@@ -16,16 +16,24 @@ function AppContent() {
       backgroundColor="grayWhite"
       paddingHorizontal="s24"
       justifyContent="flex-start"
-      style={{ gap: 8}}
+      style={{ gap: 8 }}
     >
-      <Text title preset='headingLarge'>Hello!</Text>
-      <Text preset='paragraphLarge' color='gray2' marginBottom='s40'>Enter you e-mail and password</Text>
+      <Text title preset="headingLarge">
+        Hello!
+      </Text>
+      <Text preset="paragraphLarge" color="gray2" marginBottom="s40">
+        Enter you e-mail and password
+      </Text>
 
       <TextInput label="E-mail" />
       <TextInput label="Password" />
-      <Button preset='primary' title='Sign in' marginTop='s40' marginBottom='s10'/>
-      <Button preset='outline' title='Create account' />
-
+      <Button
+        preset="primary"
+        title="Sign in"
+        marginTop="s40"
+        marginBottom="s10"
+      />
+      <Button preset="outline" title="Create account" />
     </Screen>
   );
 }

@@ -1,30 +1,30 @@
-import { createTheme } from "@shopify/restyle";
+import { createTheme } from '@shopify/restyle';
 
 const palette = {
-    lightPrimary: '#F8F7FB',
-    darkPrimary: '#0f1117',
-    lightSecondary: '#907994',
-    darkSecondary: '#9a517f',
-    greenSuccess: '#4ABC86',
-    redError: '#EA3838',
-    grayBlack: '#000000',
-    gray1: '#636363',
-    gray2: '#8E8E8E',
-    gray3: '#B3B3B3',
-    gray4: '#E1E1E1',
-    gray5: '#F5F5F5',
-    grayWhite: '#FFFFFF',
+  lightPrimary: '#F8F7FB',
+  darkPrimary: '#0f1117',
+  lightSecondary: '#907994',
+  darkSecondary: '#9a517f',
+  greenSuccess: '#4ABC86',
+  redError: '#EA3838',
+  grayBlack: '#000000',
+  gray1: '#636363',
+  gray2: '#8E8E8E',
+  gray3: '#B3B3B3',
+  gray4: '#E1E1E1',
+  gray5: '#F5F5F5',
+  grayWhite: '#FFFFFF',
 };
 
 export const theme = createTheme({
-    colors: {
-        ...palette,
-        primary: palette.lightPrimary,
-        buttonPrimary: palette.lightSecondary ,
-        error: palette.redError,
-        success: palette.greenSuccess,
-    },
-    spacing: {
+  colors: {
+    ...palette,
+    primary: palette.lightPrimary,
+    buttonPrimary: palette.lightSecondary,
+    error: palette.redError,
+    success: palette.greenSuccess,
+  },
+  spacing: {
     s4: 4,
     s8: 8,
     s10: 10,
@@ -42,8 +42,8 @@ export const theme = createTheme({
     s8: 8,
     s12: 12,
     s16: 16,
-        s20: 20,
-                s24: 24,
+    s20: 20,
+    s24: 24,
   },
   textVariants: {
     defaults: {},

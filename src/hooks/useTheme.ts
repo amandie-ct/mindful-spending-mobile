@@ -1,4 +1,4 @@
-import {useTheme} from '@shopify/restyle';
+import { useTheme } from '@shopify/restyle';
 
 import { Theme } from '../theme/theme';
 

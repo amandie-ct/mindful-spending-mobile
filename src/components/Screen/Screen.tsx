@@ -16,7 +16,7 @@ export function Screen({
 }: ScreenProps) {
   return (
     <SafeAreaView edges={edges} style={styles.safeArea}>
-      <Box flex={1} {...boxProps} backgroundColor='lightPrimary'>
+      <Box flex={1} {...boxProps} backgroundColor="lightPrimary">
         {children}
       </Box>
     </SafeAreaView>

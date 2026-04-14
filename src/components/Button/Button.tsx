@@ -1,9 +1,13 @@
-import { ActivityIndicator } from "../ActivityIndicator/ActivityIndicator";
-import { TouchableOpacityBox, TouchableOpacityBoxProps } from "../Box/Box";
-import { Text } from "../Text/Text";
-import { buttonPresets } from "./buttonPresets";
+import { ActivityIndicator } from '../ActivityIndicator/ActivityIndicator';
+import { TouchableOpacityBox, TouchableOpacityBoxProps } from '../Box/Box';
+import { Text } from '../Text/Text';
+import { buttonPresets } from './buttonPresets';
 
-export type ButtonPreset = 'primary' | 'outline' | 'secondary' | 'outlineSecondary';
+export type ButtonPreset =
+  | 'primary'
+  | 'outline'
+  | 'secondary'
+  | 'outlineSecondary';
 
 interface ButtonProps extends TouchableOpacityBoxProps {
   title: string;
@@ -29,7 +33,8 @@ export function Button({
       justifyContent="center"
       borderRadius="s24"
       {...buttonPreset.container}
-      {...touchableOpacityBoxProps}>
+      {...touchableOpacityBoxProps}
+    >
       {loading ? (
         <ActivityIndicator color={buttonPreset.content} />
       ) : (
