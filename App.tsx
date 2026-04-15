@@ -9,8 +9,14 @@ import { Text } from './src/components/Text/Text';
 import { Screen } from './src/components/Screen/Screen';
 import { theme } from './src/theme/theme';
 import { TextInput } from './src/components/TextInput/TextInput';
+import { Pressable, Alert } from 'react-native';
+import { Eye } from 'lucide-react-native';
 
 function AppContent() {
+  const handleClick = () => {
+    Alert.alert('Clicouuu');
+  };
+
   return (
     <Screen
       backgroundColor="grayWhite"
@@ -25,8 +31,16 @@ function AppContent() {
         Enter you e-mail and password
       </Text>
 
-      <TextInput label="E-mail" />
-      <TextInput label="Password" />
+      <TextInput label="E-mail" errorMessage="Email inválido" />
+      <TextInput
+        label="Password"
+        RightComponent={<Eye size={24} color={theme.colors.gray2} />}
+      />
+      <Pressable onPress={handleClick}>
+        <Text preset="paragraphSmall" bold color="darkSecondary">
+          Forgot password
+        </Text>
+      </Pressable>
       <Button
         preset="primary"
         title="Sign in"
