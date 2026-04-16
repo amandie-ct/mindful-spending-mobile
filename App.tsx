@@ -5,9 +5,10 @@ import {
 } from 'react-native-safe-area-context';
 import { theme } from './src/theme/theme';
 import { LoginScreen } from './src/screens/auth/LoginScreen/LoginScreen';
+import { SignUpScreen } from './src/screens/auth/SignUpScreen/SignUpScreen';
 
 function AppContent() {
-  return <LoginScreen />;
+  return <SignUpScreen />;
 }
 
 function App() {

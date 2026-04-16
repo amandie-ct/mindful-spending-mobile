@@ -13,7 +13,7 @@ interface TextInputProps extends RNTextInputProps {
   label: string;
   errorMessage?: string;
   RightComponent?: React.ReactElement;
-  boxProps: BoxProps;
+  boxProps?: BoxProps;
 }
 
 export function TextInput({
@@ -41,7 +41,7 @@ export function TextInput({
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
-        <Text preset="paragraphMedium" bold marginBottom="s8">
+        <Text preset="paragraphMedium" semibold marginBottom="s8">
           {label}
         </Text>
         <Box {...$textInputContainer}>
