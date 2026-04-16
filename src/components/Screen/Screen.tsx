@@ -1,30 +1,26 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Edge, SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import { useAppTheme } from '../../hooks/useTheme';
 import { Box, BoxProps } from '../Box/Box';
+import { useAppSafeArea } from '../../hooks/useAppSafeArea';
 
 interface ScreenProps extends BoxProps {
   children: React.ReactNode;
-  edges?: Edge[];
 }
 
-export function Screen({
-  children,
-  edges = ['top', 'bottom'],
-  ...boxProps
-}: ScreenProps) {
+export function Screen({ children, style, ...boxProps }: ScreenProps) {
+  const { top, bottom } = useAppSafeArea();
+
   return (
-    <SafeAreaView edges={edges} style={styles.safeArea}>
-      <Box flex={1} {...boxProps} backgroundColor="lightPrimary">
-        {children}
-      </Box>
-    </SafeAreaView>
+    <Box
+      flex={1}
+      backgroundColor="lightPrimary"
+      paddingHorizontal="s24"
+      style={{ paddingTop: top, paddingBottom: bottom }}
+      {...boxProps}
+    >
+      {children}
+    </Box>
   );
 }
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
-});
