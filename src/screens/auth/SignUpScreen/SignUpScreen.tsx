@@ -1,16 +1,16 @@
 import React from 'react';
 import { Screen } from '../../../components/Screen/Screen';
 import { Text } from '../../../components/Text/Text';
-import { TextInitial } from 'lucide-react-native';
 import { TextInput } from '../../../components/TextInput/TextInput';
 import { Button } from '../../../components/Button/Button';
+import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
 
 export function SignUpScreen() {
   function submitForm() {
     // TODO - implement
   }
   return (
-    <Screen canGoBack>
+    <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32" title>
         Create account
       </Text>
@@ -25,10 +25,10 @@ export function SignUpScreen() {
         placeholder="example@email.com"
         boxProps={{ mb: 's20' }}
       />
-      <TextInput
+      <PasswordInput
         label="Password"
         placeholder="Enter your password"
-        boxProps={{ mb: 's48' }}
+        boxProps={{ mb: 's20' }}
       />
       <Button preset="primary" title="Create account" onPress={submitForm} />
     </Screen>

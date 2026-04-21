@@ -23,6 +23,7 @@ export const theme = createTheme({
     buttonPrimary: palette.lightSecondary,
     error: palette.redError,
     success: palette.greenSuccess,
+    background: palette.lightPrimary,
   },
   spacing: {
     s4: 4,

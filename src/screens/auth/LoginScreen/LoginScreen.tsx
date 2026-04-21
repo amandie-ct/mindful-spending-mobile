@@ -3,9 +3,9 @@ import { Text } from '../../../components/Text/Text';
 import { TextInput } from '../../../components/TextInput/TextInput';
 import { Screen } from '../../../components/Screen/Screen';
 import { Pressable, Alert } from 'react-native';
-import { Eye } from 'lucide-react-native';
 import { Button } from '../../../components/Button/Button';
 import { useTheme } from '@shopify/restyle';
+import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
 
 export function LoginScreen() {
   const theme = useTheme();
@@ -28,9 +28,9 @@ export function LoginScreen() {
         errorMessage="Email inválido"
         boxProps={{ mb: 's8' }}
       />
-      <TextInput
-        label="Password"
-        RightComponent={<Eye size={24} color={theme.colors.gray2} />}
+      <PasswordInput
+        label="Enter your password"
+        placeholder="Password"
         boxProps={{ mb: 's8' }}
       />
       <Pressable onPress={handleClick}>
