@@ -1,6 +1,6 @@
 import React from 'react';
 import { KeyboardAvoidingView, ScrollView, Platform } from 'react-native';
-import { Box, BoxProps } from '../Box/Box';
+import { Box, BoxProps, TouchableOpacityBox } from '../Box/Box';
 import { useAppSafeArea } from '../../hooks/useAppSafeArea';
 import { ChevronLeft } from 'lucide-react-native';
 import { useTheme } from '@shopify/restyle';
@@ -9,6 +9,7 @@ import {
   ScrollViewContainer,
   ViewContainer,
 } from './components/ScreenContainer';
+import { useNavigation } from '@react-navigation/native';
 
 interface ScreenProps extends BoxProps {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ export function Screen({
   const { colors } = useTheme();
 
   const Container = scrollable ? ScrollViewContainer : ViewContainer;
+  const navigation = useNavigation();
 
   return (
     <KeyboardAvoidingView
@@ -41,12 +43,17 @@ export function Screen({
           {...boxProps}
         >
           {canGoBack && (
-            <Box mb="s24" flexDirection="row" alignItems="center">
+            <TouchableOpacityBox
+              mb="s24"
+              flexDirection="row"
+              alignItems="center"
+              onPress={navigation.goBack}
+            >
               <ChevronLeft size="28" color={colors.lightSecondary} />
               <Text preset="paragraphMedium" semibold color="lightSecondary">
                 Back
               </Text>
-            </Box>
+            </TouchableOpacityBox>
           )}
 
           {children}

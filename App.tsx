@@ -4,10 +4,10 @@ import {
   SafeAreaProvider,
 } from 'react-native-safe-area-context';
 import { theme } from './src/theme/theme';
-import { SignUpScreen } from './src/screens/auth/SignUpScreen/SignUpScreen';
+import { Router } from './src/routes/Routes';
 
 function AppContent() {
-  return <SignUpScreen />;
+  return <Router />;
 }
 
 function App() {

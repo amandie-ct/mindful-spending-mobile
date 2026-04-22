@@ -2,17 +2,21 @@ import React from 'react';
 import { Text } from '../../../components/Text/Text';
 import { TextInput } from '../../../components/TextInput/TextInput';
 import { Screen } from '../../../components/Screen/Screen';
-import { Pressable, Alert } from 'react-native';
+import { Pressable } from 'react-native';
 import { Button } from '../../../components/Button/Button';
 import { useTheme } from '@shopify/restyle';
 import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../../routes/Routes';
 
-export function LoginScreen() {
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
+
+export function LoginScreen({ navigation }: ScreenProps) {
   const theme = useTheme();
 
-  const handleClick = () => {
-    Alert.alert('Clicouuu');
-  };
+  function navigateToSignUpScreen() {
+    navigation.navigate('SignUpScreen');
+  }
 
   return (
     <Screen>
@@ -23,17 +27,13 @@ export function LoginScreen() {
         Enter you e-mail and password
       </Text>
 
-      <TextInput
-        label="E-mail"
-        errorMessage="Email inválido"
-        boxProps={{ mb: 's8' }}
-      />
+      <TextInput label="E-mail" boxProps={{ mb: 's20' }} />
       <PasswordInput
-        label="Enter your password"
+        label="Password"
         placeholder="Password"
         boxProps={{ mb: 's8' }}
       />
-      <Pressable onPress={handleClick}>
+      <Pressable>
         <Text preset="paragraphSmall" bold color="darkSecondary">
           Forgot password
         </Text>
@@ -44,7 +44,11 @@ export function LoginScreen() {
         marginTop="s40"
         marginBottom="s10"
       />
-      <Button preset="outline" title="Create account" />
+      <Button
+        preset="outline"
+        title="Create account"
+        onPress={navigateToSignUpScreen}
+      />
     </Screen>
   );
 }
