@@ -2,9 +2,7 @@ import React from 'react';
 import { Text } from '../../../components/Text/Text';
 import { TextInput } from '../../../components/TextInput/TextInput';
 import { Screen } from '../../../components/Screen/Screen';
-import { Pressable } from 'react-native';
 import { Button } from '../../../components/Button/Button';
-import { useTheme } from '@shopify/restyle';
 import { PasswordInput } from '../../../components/PasswordInput/PasswordInput';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../../routes/Routes';
@@ -12,8 +10,6 @@ import { RootStackParamList } from '../../../routes/Routes';
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
 export function LoginScreen({ navigation }: ScreenProps) {
-  const theme = useTheme();
-
   function navigateToSignUpScreen() {
     navigation.navigate('SignUpScreen');
   }

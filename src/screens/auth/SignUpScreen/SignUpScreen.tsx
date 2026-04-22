@@ -8,14 +8,16 @@ import { RootStackParamList } from '../../../routes/Routes';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { CircleCheck } from 'lucide-react-native';
 import { useAppTheme } from '../../../hooks/useTheme';
+import { useResetNavigationSuccess } from '../../../hooks/useResetNavigationSuccess';
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, 'SignUpScreen'>;
 
 export function SignUpScreen({ navigation }: ScreenProps) {
   const { colors } = useAppTheme();
+  const { reset } = useResetNavigationSuccess();
+
   function submitForm() {
-    // TODO - implement
-    navigation.navigate('SuccessScreen', {
+    reset({
       title: 'Success',
       description: 'You are all set! Now go to login to start enjoying the app',
       icon: (
@@ -27,6 +29,7 @@ export function SignUpScreen({ navigation }: ScreenProps) {
       ),
     });
   }
+
   return (
     <Screen canGoBack scrollable>
       <Text preset="headingLarge" mb="s32" title>
